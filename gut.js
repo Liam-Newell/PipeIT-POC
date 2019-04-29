@@ -4,11 +4,13 @@ const compile = require('./compile');
 
 module.exports = body => {
   try {
-    const { config, assemble, pipeline } = builder(body);
+    const { config, assemble, pipeline, pushDemo, flyScript } = builder(body);
     return ([configFile, assembleFile, pipelineFile] = compile(
       config,
       assemble,
-      pipeline
+      pipeline,
+      flyScript,
+      pushDemo
     ));
   } catch (error) {}
 };

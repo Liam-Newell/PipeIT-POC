@@ -2,7 +2,8 @@ resource_types:
   name: enterprise-pipeline-api
   type: docker-image
   source:
-    repository: sdf
+    repository: >-
+      docker.artifactory.platform.manulife.io/concourse-enterprise-pipeline-http-api-resource
     tag: latest
 resource:
   - name: src-dev
@@ -27,7 +28,7 @@ resource:
         buildPipelineName: '{BUILD_PIPELINE_NAME}'
         org: '{{CF_DEV_ORG}}'
         deploy_script: source/concourse/scripts/push-acceptance.sh
-        division: !<tag:yaml.org,2002:js/undefined> ''
+        division: CAC
         buildTaskName: cf-push-dev
       env_vars:
         MY_ENV_VAR: '{{MY_ENV_VAR}}'
