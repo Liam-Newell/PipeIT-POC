@@ -18,7 +18,11 @@ app.get('/', (req, res) => {
 app.post('/form-submit', async (req, res) => {
   console.log(req.body);
   const files = gut(req.body);
-  res.json(req.body);
+  res.download(__dirname + '/concourse.zip');
+  // res.download(__dirname + '/pipeline.yml', 'pipeline.yml');
+  // res.download(__dirname + '/assemble.yml', 'assemble.yml');
+  // res.json(req.body);
+  // res.end();
 });
 
 app.listen(port, () => {
