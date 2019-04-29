@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const gut = require('./gut');
+const yamlParser = require('js-yaml');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +17,13 @@ app.get('/', (req, res) => {
 
 app.post('/form-submit', async (req, res) => {
   console.log(req.body);
-  gut(req.body);
+  const configurations = gut(req.body);
+  try {
+    const getYaml = yamlParser.load(configurations, 'utf-8');
+    console.log('yammmmmmling', getYaml);
+  } catch (err) {
+    console.log(err);
+  }
 
   res.json(req.body);
 });

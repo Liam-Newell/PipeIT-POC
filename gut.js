@@ -5,5 +5,6 @@ module.exports = body => {
   try {
     const fileObjects = builder(body);
     console.log(JSON.stringify(fileObjects));
+    return fileObjects;
   } catch (error) {}
 };
