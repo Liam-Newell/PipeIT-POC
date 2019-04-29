@@ -1,0 +1,6 @@
+CF_DEV_ORG: ''
+CF_UAT_ORG: ''
+CF_PROD_ORG: ''
+MY_ENV_VAR: ''
+GIT_SSH_URI: wer.sh
+GIT_PRIVATE_KEY: kjh
