@@ -5,7 +5,7 @@ module.exports = body => {
         name: 'enterprise-pipeline-api',
         type: 'docker-image',
         source: {
-          repository: body.gitRepo || '',
+          repository: 'docker.artifactory.platform.manulife.io/concourse-enterprise-pipeline-http-api-resource',
           tag: 'latest'
         }
       },
@@ -36,7 +36,7 @@ module.exports = body => {
               buildPipelineName: '{BUILD_PIPELINE_NAME}',
               org: '{{CF_DEV_ORG}}',
               deploy_script: 'source/concourse/scripts/push-acceptance.sh',
-              division: body.division,
+              division: body.region,
               buildTaskName: 'cf-push-dev'
             },
             env_vars: {
