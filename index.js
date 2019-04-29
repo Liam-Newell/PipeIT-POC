@@ -2,13 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
+const gut = require('./gut');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('combined'));
 const port = 8080;
-
-const gut = require('./gut');
 
 // app.set('views', __dirname + '/views');
 app.get('/', (req, res) => {
@@ -16,9 +15,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/form-submit', async (req, res) => {
-  //   gut(req.body);
-  const name = req.body.teamName;
-  console.log(name);
+  console.log(req.body);
+  gut(req.body);
+
   res.json(req.body);
 });
 

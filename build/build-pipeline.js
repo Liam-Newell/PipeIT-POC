@@ -46,6 +46,7 @@ module.exports = body => {
         }
       ]
     };
+    return pipeline;
   } catch (error) {
     throw Error(`Error: ${error}`);
   }
