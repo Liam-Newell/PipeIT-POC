@@ -4,6 +4,6 @@ const builder = require('./build');
 module.exports = body => {
   try {
     const fileObjects = builder(body);
-    console.log(JSON.stringify(fileObjects));
+    // console.log(JSON.stringify(fileObjects));
   } catch (error) {}
 };
