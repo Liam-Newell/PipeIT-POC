@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const gut = require('./gut');
 const yamlParser = require('js-yaml');
+const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 app.post('/form-submit', async (req, res) => {
   console.log(req.body);
   const files = gut(req.body);
+  console.log('Files: ', files);
   res.json(req.body);
 });
 
