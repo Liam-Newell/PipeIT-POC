@@ -17,14 +17,7 @@ app.get('/', (req, res) => {
 
 app.post('/form-submit', async (req, res) => {
   console.log(req.body);
-  const configurations = gut(req.body);
-  try {
-    const getYaml = yamlParser.load(configurations, 'utf-8');
-    console.log('yammmmmmling', getYaml);
-  } catch (err) {
-    console.log(err);
-  }
-
+  const files = gut(req.body);
   res.json(req.body);
 });
 
