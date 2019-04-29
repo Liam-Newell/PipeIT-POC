@@ -5,8 +5,7 @@ module.exports = body => {
         name: 'enterprise-pipeline-api',
         type: 'docker-image',
         source: {
-          repository:
-            'docker.artifactory.platform.manulife.io/concourse-enterprise-pipeline-http-api-resource',
+          repository: body.gitRepo || '',
           tag: 'latest'
         }
       },
