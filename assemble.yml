@@ -4,8 +4,8 @@ image_resource:
   source: ' # NOTE: It is important that this Docker image contains the cf command line utility as it is used by the task # which the Enterprise Pipeline intercepts and will be the context in which the deploy script will run'
   repository: wer.sh
 inputs:
-  name: source
+  - name: source
 outputs:
-  name: target
+  - name: target
 run:
   path: source/concourse/scripts/assemble.sh

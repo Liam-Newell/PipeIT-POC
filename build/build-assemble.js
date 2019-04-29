@@ -9,9 +9,9 @@ module.exports = body => {
       repository: body.gitRepo
     },
 
-    inputs: { name: 'source' },
+    inputs: [{ name: 'source' }],
 
-    outputs: { name: 'target' },
+    outputs: [{ name: 'target' }],
 
     run: { path: 'source/concourse/scripts/assemble.sh' }
   };
