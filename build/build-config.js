@@ -1,13 +1,13 @@
 module.exports = body => {
   try {
     const config = {
-      CF_DEV_ORG: '',
-      CF_UAT_ORG: '',
-      CF_PROD_ORG: '',
+      CF_DEV_ORG: (body.environment.includes('dev') && `${body.org}-DEV`) || '',
+      CF_UAT_ORG: (body.environment.includes('uat') && `${body.org}-UAT`) || '',
+      CF_PROD_ORG:
+        (body.environment.includes('prod') && `${body.org}-PROD`) || '',
       MY_ENV_VAR: '',
-      GIT_SSH_URI:
-        'ssh://git@git.platform.manulife.io:2222/geesoffice/enterprise-pipeline-prod-demo.git',
-      GIT_PRIVATE_KEY: ''
+      GIT_SSH_URI: body.gitRepo || '',
+      GIT_PRIVATE_KEY: body.getKey || ''
     };
     return config;
   } catch (error) {

@@ -1,1 +1,1 @@
-module.exports.assemble = body => {};
+module.exports = body => {};

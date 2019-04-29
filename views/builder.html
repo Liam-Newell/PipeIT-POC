@@ -21,7 +21,8 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"
   ></script>
-  <form action="/form-submit" method="post" name="pipeSubmit">
+
+  <form action="/form-submit" method="post" name="pipeSubmit" class="mx-auto w-50">
     <div class="form-group">
       <label for="teamEmail" class="col-sm-2 col-form-label">Team Email</label>
       <div class="col-sm-10">
@@ -30,7 +31,7 @@
           class="form-control"
           id="teamEmail"
           name="teamEmail"
-          placeholder="Team Email"
+          placeholder=""
         />
       </div>
     </div>
@@ -42,11 +43,11 @@
           class="form-control"
           id="teamName"
           name="teamName"
-          placeholder="Team Name"
+          placeholder=""
         />
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
       <label for="gitRepo" class="col-sm-2 col-form-label">Git SSH URI</label>
       <div class="col-sm-10">
         <input
@@ -54,11 +55,11 @@
           class="form-control"
           id="gitRepo"
           name="gitRepo"
-          placeholder="Git SSH URI"
+          placeholder=""
         />
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
       <label for="gitKey" class="col-sm-2 col-form-label">Git Private Key</label
       >
       <div class="col-sm-10">
@@ -67,12 +68,25 @@
           class="form-control"
           id="gitKey"
           name="gitKey"
-          placeholder="Git Private Key"
+          placeholder="this is a key"
+          value="this is a key"
           disabled
         />
       </div>
     </div>
-    <div class="form-group row">
+
+    <div class="form-group">
+      <label for="division" class="col-sm-2 col-form-label">Division</label>
+      <div class="col-sm-10">
+        <select name="division" id="division">
+          <option value="CAC">CAC</option>
+          <option value="EAS">EAS</option>
+          <option value="SEA">SEA</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
       <label for="org" class="col-sm-2 col-form-label">Org</label>
       <div class="col-sm-10">
         <input
@@ -80,11 +94,23 @@
           class="form-control"
           id="org"
           name="org"
-          placeholder="Organization e.g. CDN-CAC-DEV"
+          placeholder="e.g. CDN-CAC-DEV"
         />
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
+      <label for="space" class="col-sm-2 col-form-label">Space</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="space"
+          name="space"
+          placeholder="SPACE-CAC-DEV"
+        />
+      </div>
+    </div>
+    <div class="form-group">
       <label for="type" class="col-sm-2 col-form-label">App Type</label>
       <div class="col-sm-10">
         <input
@@ -92,77 +118,64 @@
           class="form-control"
           id="type"
           name="type"
-          placeholder="App Type e.g. Node"
+          placeholder="e.g. Node"
         />
       </div>
     </div>
     <fieldset class="form-group">
-      <div class="row">
-        <legend class="col-form-label col-sm-2 pt-0">Environment</legend>
-        <div class="col-sm-10">
+      <legend class="col-form-label col-sm-2 pt-0">Environment</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="environment"
+            id="gridCheck1"
+            value="dev"
+            checked
+          />
+          <label class="form-check-label" for="gridCheck1">
+            DEV
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="environment"
+            id="gridCheck2"
+            value="test"
+          />
+          <label class="form-check-label" for="gridCheck2">
+            TEST
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            name="environment"
+            id="gridCheck3"
+            value="uat"
+          />
+          <label class="form-check-label" for="gridCheck3">
+            UAT
+          </label>
+        </div>
           <div class="form-check">
             <input
               class="form-check-input"
-              type="radio"
-              name="gridRadios"
-              id="gridRadios1"
-              value="option1"
-              checked
+              type="checkbox"
+              name="environment"
+              id="gridCheck4"
+              value="prod"
             />
-            <label class="form-check-label" for="gridRadios1">
-              DEV
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="gridRadios"
-              id="gridRadios2"
-              value="option2"
-            />
-            <label class="form-check-label" for="gridRadios2">
-              TEST
-            </label>
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="gridRadios"
-              id="gridRadios3"
-              value="option3"
-            />
-            <label class="form-check-label" for="gridRadios3">
-              UAT
-            </label>
-          </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                id="gridRadios4"
-                value="option4"
-              />
-              <label class="form-check-label" for="gridRadios4">PROD </label>
-            </div>
+            <label class="form-check-label" for="gridCheck4">PROD </label>
           </div>
         </div>
       </div>
     </fieldset>
-    <!-- <div class="form-group row">
-      <div class="col-sm-2">Checkbox</div>
-      <div class="col-sm-10">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck1" />
-          <label class="form-check-label" for="gridCheck1">
-            Example checkbox
-          </label>
-        </div>
-      </div>
-    </div> -->
-    <div class="form-group row">
+    <div class="form-group">
       <label for="test" class="col-sm-2 col-form-label">Test File</label>
       <div class="col-sm-10">
         <input
@@ -170,15 +183,31 @@
           class="form-control"
           id="test"
           name="test"
-          placeholder="Test File"
+          placeholder=""
           disabled
         />
       </div>
     </div>
-    <div class="form-group row">
+    <div class="form-group">
       <div class="col-sm-10">
         <button type="submit" class="btn btn-primary">PIPE IT!</button>
-      </div>
+        </div>
     </div>
   </form>
 </html>
+
+
+
+      <!-- 
+      <div class="form-group">
+        <div class="row">
+          <div class="col-sm-2">Checkbox</div>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck1" />
+              <label class="form-check-label" for="gridCheck1">
+                Example checkbox
+              </label>
+            </div>
+          </div>
+        </div> -->

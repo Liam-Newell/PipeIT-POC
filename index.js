@@ -19,7 +19,7 @@ app.post('/form-submit', async (req, res) => {
   //   gut(req.body);
   const name = req.body.teamName;
   console.log(name);
-  // res.json(req.body);
+  res.json(req.body);
 });
 
 app.listen(port, () => {
