@@ -2,7 +2,7 @@ resource_types:
   name: enterprise-pipeline-api
   type: docker-image
   source:
-    repository: wer.sh
+    repository: sdf
     tag: latest
 resource:
   - name: src-dev

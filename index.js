@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
 const gut = require('./gut');
-// const yamlParser = require('js-yaml');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
