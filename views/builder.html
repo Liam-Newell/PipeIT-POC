@@ -22,13 +22,20 @@
     crossorigin="anonymous"
   ></script>
   <h1 class="col-sm-6 mx-auto bg-info">Pipeline Builder</h1>
-  <br>
-  <p class="col-sm-6 mx-auto bg-info">Welcome to pipeline builder. This app will help you get started pipelining your
-      application using Manulife Enterprise Pipeline, and deploying it to your target platform.
-      All you need is your application on Gitlab and its manifest.
-      After filling in the below information, just hit <b>PIPE IT!</b></p>
   <br />
-  <form action="/form-submit" method="post" name="pipeSubmit" class="col-sm-6 mx-auto">
+  <p class="col-sm-6 mx-auto bg-info">
+    Welcome to pipeline builder. This app will help you get started pipelining
+    your application using Manulife Enterprise Pipeline, and deploying it to
+    your target platform. All you need is your application on Gitlab and its
+    manifest. After filling in the below information, just hit <b>PIPE IT!</b>
+  </p>
+  <br />
+  <form
+    action="/form-submit"
+    method="post"
+    name="pipeSubmit"
+    class="col-sm-6 mx-auto"
+  >
     <div class="form-group">
       <label for="segment" class="col-sm-2 col-form-label">Segment</label>
       <select id="segment" name="segment" class="col-sm-2">
@@ -70,10 +77,9 @@
         <input
           type="text"
           class="form-control"
-          id="test"
-          name="test"
+          id="appName"
+          name="appName"
           placeholder="Test File"
-          disabled
         />
       </div>
     </div>
