@@ -1,5 +1,5 @@
 module.exports = body => {
-  const flyDemo = `      #!/bin/bash
+  const flyDemo = `#!/bin/bash
     fly --target ${body.teamName} login --team-name ${
     body.teamName
   } --concourse-url https://concourse.platform.manulife.io --insecure

@@ -10,14 +10,16 @@ app.use(morgan('combined'));
 const port = 8080;
 
 // app.set('views', __dirname + '/views');
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.sendFile(path.join(__dirname + '/views/builder.html'));
 });
 
 app.post('/form-submit', async (req, res) => {
   console.log(req.body);
-  const files = gut(req.body);
-  res.download(__dirname + '/concourse.zip');
+  const zip = await gut(req.body);
+  res.contentType('zip');
+  res.write(zip);
+  res.end();
 });
 
 app.listen(port, () => {
